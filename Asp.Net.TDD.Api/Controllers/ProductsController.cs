@@ -17,6 +17,8 @@ namespace Asp.Net.TDD.Api.Controllers
             productSvc = new ProductService();
         }
 
+        [HttpGet]
+        [Route("api/products")]
         public HttpResponseMessage Get()
         {
             var products = productSvc.Get();
@@ -34,7 +36,8 @@ namespace Asp.Net.TDD.Api.Controllers
         }
 
         [HttpPost]
-        public HttpResponseMessage Post(Product product)
+        [Route("api/products")]
+        public HttpResponseMessage Post([FromBody]Product product)
         {
             var productModel = ProductMapper.MapToModel(product);
             IProductService productSvc = new ProductService();
