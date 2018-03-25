@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.TDD.Services", "AspNetTDD\Asp.Net.TDD.Services.csproj", "{D60F80AC-55E2-4A40-8C00-8F81E11B8EDA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.TDD.Api", "Asp.Net.TDD.Api\Asp.Net.TDD.Api.csproj", "{8C75353F-1610-4B9D-9109-266859C1BC5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.TDD.Repositories", "Asp.Net.TDD.Repositories\Asp.Net.TDD.Repositories.csproj", "{B7ACCDA1-C417-4421-B108-A88366405BB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{8C75353F-1610-4B9D-9109-266859C1BC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C75353F-1610-4B9D-9109-266859C1BC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C75353F-1610-4B9D-9109-266859C1BC5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7ACCDA1-C417-4421-B108-A88366405BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7ACCDA1-C417-4421-B108-A88366405BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7ACCDA1-C417-4421-B108-A88366405BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7ACCDA1-C417-4421-B108-A88366405BB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E316253-9CB4-4E64-9B8C-E64941CB3B6C}
 	EndGlobalSection
 EndGlobal
