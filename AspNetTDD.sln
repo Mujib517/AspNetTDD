@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.TDD.Services", "Asp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.TDD.Api", "Asp.Net.TDD.Api\Asp.Net.TDD.Api.csproj", "{8C75353F-1610-4B9D-9109-266859C1BC5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.TDD.Repositories", "Asp.Net.TDD.Repositories\Asp.Net.TDD.Repositories.csproj", "{B7ACCDA1-C417-4421-B108-A88366405BB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.Net.TDD.Repositories", "Asp.Net.TDD.Repositories\Asp.Net.TDD.Repositories.csproj", "{A8763D2A-A4A0-4B2C-B077-7C4FF8FA71ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{8C75353F-1610-4B9D-9109-266859C1BC5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C75353F-1610-4B9D-9109-266859C1BC5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C75353F-1610-4B9D-9109-266859C1BC5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7ACCDA1-C417-4421-B108-A88366405BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7ACCDA1-C417-4421-B108-A88366405BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7ACCDA1-C417-4421-B108-A88366405BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7ACCDA1-C417-4421-B108-A88366405BB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8763D2A-A4A0-4B2C-B077-7C4FF8FA71ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8763D2A-A4A0-4B2C-B077-7C4FF8FA71ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8763D2A-A4A0-4B2C-B077-7C4FF8FA71ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8763D2A-A4A0-4B2C-B077-7C4FF8FA71ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
