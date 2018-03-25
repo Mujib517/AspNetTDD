@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Asp.Net.TDD.Api.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,9 +10,13 @@ namespace Asp.Net.TDD.Api.Controllers
 {
     public class ProductsController : ApiController
     {
-        public IEnumerable<string> Get()
+        public IEnumerable<Product> Get()
         {
-            return new[] { "Value 1", "Value 2" };
+            List<Product> products = new List<Product>();
+
+            products.Add(new Product { Id = Guid.NewGuid(), Brand = "Nokia", Model = "8", Price = 200, InStock = true });
+
+            return products;
         }
     }
 }
