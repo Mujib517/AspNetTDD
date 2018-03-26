@@ -16,6 +16,6 @@ namespace Asp.Net.TDD.Repositories
         }
         public DbSet<ProductEntity> Products { get; set; }
 
-
+        public DbSet<OrderEntity> Orders { get; set; }
     }
 }
