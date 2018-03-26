@@ -54,6 +54,7 @@
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\OrderEntity.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\TaxEntity.cs" />
     <Compile Include="ProductContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Interfaces\IOrderRepository.cs" />

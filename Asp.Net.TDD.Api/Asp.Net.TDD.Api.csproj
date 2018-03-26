@@ -168,6 +168,8 @@
     <Compile Include="Registries\ApiRegistry.cs" />
     <Compile Include="ViewModels\Order.cs" />
     <Compile Include="ViewModels\Product.cs" />
+    <Compile Include="ViewModels\Tax.cs" />
+    <Compile Include="ViewModels\TaxesVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
