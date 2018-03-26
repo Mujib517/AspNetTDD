@@ -15,7 +15,7 @@ namespace Asp.Net.TDD.Repositories
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ProductContext>());
         }
         public DbSet<ProductEntity> Products { get; set; }
-
         public DbSet<OrderEntity> Orders { get; set; }
+        public DbSet<TaxEntity> Taxes { get; set; }
     }
 }
