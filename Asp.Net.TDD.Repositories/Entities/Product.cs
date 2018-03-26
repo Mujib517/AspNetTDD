@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Asp.Net.TDD.Repositories.Entities
 {
@@ -16,5 +17,7 @@ namespace Asp.Net.TDD.Repositories.Entities
         public bool InStock { get; set; }
 
         public int Quantity { get; set; }
+
+        public virtual ICollection<OrderEntity> Orders { get; set; }
     }
 }

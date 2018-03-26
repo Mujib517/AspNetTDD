@@ -30,8 +30,7 @@ namespace AspNetTDD.Mappers
                 Status = (OrderStatus)entity.Status,
                 Amount = entity.Amount,
                 DeliveryCharges = entity.DeliveryCharges,
-                Total = entity.Total,
-                Product = ProductMapper.MapToModel(entity.Product)
+                Total = entity.Total
             };
         }
         public static OrderEntity MapToEntity(Order order)
@@ -51,8 +50,7 @@ namespace AspNetTDD.Mappers
                 LastUpdatedBy = "Mujib",
                 Amount = order.Amount,
                 Total = order.Total,
-                DeliveryCharges = order.DeliveryCharges,
-                Product = ProductMapper.MapToEntiy(order.Product)
+                DeliveryCharges = order.DeliveryCharges                
             };
 
         }
