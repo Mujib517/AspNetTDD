@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using static Asp.Net.TDD.Api.Mappers.Enums;
+using Asp.Net.TDD.Services.Models;
 
 namespace Asp.Net.TDD.Api.Mappers
 {
@@ -32,7 +33,21 @@ namespace Asp.Net.TDD.Api.Mappers
                 Status = (OrderStatus)order.Status,
                 Amount = order.Amount,
                 DeliveryCharges = order.DeliveryCharges,
-                Total = order.Total
+                Total = order.Total,
+                Product = MapProduct(order.Product),
+            };
+        }
+
+        private static ViewModels.Product MapProduct(Services.Models.Product product)
+        {
+            if (product == null) return null;
+            return new ViewModels.Product
+            {
+                Brand = product.Brand,
+                Model = product.Model,
+                InStock = product.InStock,
+                Price = product.Price,
+                Id = product.Id
             };
         }
 

@@ -30,11 +30,16 @@ namespace Asp.Net.TDD.Api.Controllers
         [HttpPost]
         public IHttpActionResult Save(Order order)
         {
-            order.Id = Guid.NewGuid();
-            var model = OrderMapper.MapToModel(order);
-            _orderService.Save(model);
+            if (!string.IsNullOrEmpty(order.ProductId))
+            {
+                order.Id = Guid.NewGuid();
+                var model = OrderMapper.MapToModel(order);
+                _orderService.Save(model);
 
-            return Created(new Uri(Request.RequestUri + order.Id.ToString()), order);
+                return Created(new Uri(Request.RequestUri + order.Id.ToString()), order);
+            }
+
+            return BadRequest("Product Id is Missing");
         }
     }
 }

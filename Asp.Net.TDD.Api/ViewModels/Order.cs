@@ -12,5 +12,6 @@ namespace Asp.Net.TDD.Api.ViewModels
         public double Amount { get; set; }
         public double DeliveryCharges { get; set; }
         public double Total { get; set; }
+        public Product Product { get; set; }
     }
 }

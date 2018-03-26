@@ -44,7 +44,7 @@ namespace AspNetTDD.Mappers
                 InStock = entity.InStock,
                 Id = Guid.Parse(entity.Id),
                 Model = entity.Model,
-                Price = entity.Price
+                Price = entity.Price,
             };
         }
     }

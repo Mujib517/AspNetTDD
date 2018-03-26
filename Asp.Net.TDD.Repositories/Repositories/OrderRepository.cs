@@ -19,7 +19,10 @@ namespace Asp.Net.TDD.Repositories.Repositories
 
         public IEnumerable<OrderEntity> Get()
         {
-            return _db.Orders.ToList();
+            return _db
+                .Orders
+                .Include("Product")
+                .ToList();
         }
 
         public OrderEntity Get(string id)
