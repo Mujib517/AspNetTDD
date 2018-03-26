@@ -1,6 +1,7 @@
 ﻿using Asp.Net.TDD.Repositories.Entities;
 using Asp.Net.TDD.Services.Models;
 using System;
+using System.Collections.Generic;
 
 namespace AspNetTDD.Mappers
 {
@@ -20,6 +21,31 @@ namespace AspNetTDD.Mappers
             };
 
             return entity;
+        }
+
+        public static IEnumerable<Product> MapToModels(IEnumerable<ProductEntity> entities)
+        {
+            var models = new List<Product>();
+
+            foreach (var entity in entities)
+            {
+                models.Add(MapToModel(entity));
+            }
+
+            return models;
+        }
+
+        public static Product MapToModel(ProductEntity entity)
+        {
+            if (entity == null) return null;
+            return new Product
+            {
+                Brand = entity.Brand,
+                InStock = entity.InStock,
+                Id = Guid.Parse(entity.Id),
+                Model = entity.Model,
+                Price = entity.Price
+            };
         }
     }
 }
