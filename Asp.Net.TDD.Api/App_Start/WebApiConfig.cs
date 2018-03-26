@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Asp.Net.TDD.Api.App_Start;
+using Asp.Net.TDD.Api.Registries;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -7,6 +9,7 @@ namespace Asp.Net.TDD.Api
 {
     public static class WebApiConfig
     {
+
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
@@ -19,6 +22,8 @@ namespace Asp.Net.TDD.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.DependencyResolver = new ApiDependencyResolver(ApiRegistry.ApiContainer);
         }
     }
 }

@@ -18,12 +18,12 @@ namespace Asp.Net.TDD.Api.Registries
                 {
                     x.Scan(s =>
                     {
+                        s.AssembliesAndExecutablesFromApplicationBaseDirectory();
                         s.TheCallingAssembly();
                         s.WithDefaultConventions();
                     });
                 });
 
-                DependencyResolver.SetResolver(new ApiDependencyResolver(container));
                 return container;
             }
         }
