@@ -14,10 +14,12 @@ namespace AspNetTDD.Services
     public class OrderService : IOrderService
     {
         private IOrderRepository _orderRepository;
+        private IProductRepository _productRepository;
 
-        public OrderService()
+        public OrderService(IOrderRepository orderRepository, IProductRepository productRepository)
         {
-            _orderRepository = new OrderRepository();
+            _orderRepository = orderRepository;
+            _productRepository = productRepository;
         }
         public IEnumerable<Order> Get()
         {
@@ -33,26 +35,11 @@ namespace AspNetTDD.Services
 
         public void Save(Order order)
         {
-            order.Amount = CalculateAmount(order);
-            order.DeliveryCharges = CalculateDeliveryCharge(order);
-            order.Total = CalculateTotal(order);
-
+            var productEntity = _productRepository.Get(order.Product.Id.ToString());
+            var productModel = ProductMapper.MapToModel(productEntity);
+            order.Product = productModel;
             var entity = OrderMapper.MapToEntity(order);
             _orderRepository.Save(entity);
-        }
-
-        private double CalculateTotal(Order order)
-        {
-            return order.Amount + order.DeliveryCharges;
-        }
-
-        private double CalculateAmount(Order order)
-        {
-            return order.Quantity * 100;
-        }
-        private double CalculateDeliveryCharge(Order order)
-        {
-            return order.Amount >= 500 ? 0 : 50;
         }
     }
 }

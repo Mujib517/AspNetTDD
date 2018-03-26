@@ -19,7 +19,6 @@ namespace AspNetTDD.Mappers
 
             return list;
         }
-
         public static Order MapToModel(OrderEntity entity)
         {
             if (entity == null) return null;
@@ -34,10 +33,13 @@ namespace AspNetTDD.Mappers
                 Total = entity.Total
             };
         }
-
         public static OrderEntity MapToEntity(Order order)
         {
             if (order == null) return null;
+
+            order.Amount = CalculateAmount(order);
+            order.DeliveryCharges = CalculateDeliveryCharge(order);
+            order.Total = CalculateTotal(order);
 
             return new OrderEntity
             {
@@ -46,10 +48,24 @@ namespace AspNetTDD.Mappers
                 Status = (int)order.Status,
                 LastUpdated = DateTime.Now,
                 LastUpdatedBy = "Mujib",
+                Amount = order.Amount,
                 Total = order.Total,
-                DeliveryCharges = order.DeliveryCharges,
-                Amount = order.Amount
+                DeliveryCharges = order.DeliveryCharges
             };
+
+        }
+
+        private static double CalculateTotal(Order order)
+        {
+            return order.Amount + order.DeliveryCharges;
+        }
+        private static double CalculateAmount(Order order)
+        {
+            return order.Quantity * order.Product.Price;
+        }
+        private static double CalculateDeliveryCharge(Order order)
+        {
+            return order.Amount >= 500 ? 0 : 50;
         }
     }
 }

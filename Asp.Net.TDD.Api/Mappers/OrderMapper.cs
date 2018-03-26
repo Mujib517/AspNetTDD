@@ -29,7 +29,10 @@ namespace Asp.Net.TDD.Api.Mappers
             {
                 Id = order.Id,
                 Quantity = order.Quantity,
-                Status = (OrderStatus)order.Status
+                Status = (OrderStatus)order.Status,
+                Amount = order.Amount,
+                DeliveryCharges = order.DeliveryCharges,
+                Total = order.Total
             };
         }
 
@@ -44,7 +47,8 @@ namespace Asp.Net.TDD.Api.Mappers
                 Status = (AspNetTDD.Models.Enums.OrderStatus)order.Status,
                 DeliveryCharges = order.DeliveryCharges,
                 Amount = order.Amount,
-                Total = order.Total
+                Total = order.Total,
+                Product = new Services.Models.Product { Id = Guid.Parse(order.ProductId) }
             };
         }
     }
