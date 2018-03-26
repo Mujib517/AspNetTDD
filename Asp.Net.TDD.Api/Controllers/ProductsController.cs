@@ -12,9 +12,9 @@ namespace Asp.Net.TDD.Api.Controllers
     {
         IProductService productSvc;
 
-        public ProductsController()
+        public ProductsController(IProductService productSvc)
         {
-            productSvc = new ProductService();
+            this.productSvc = productSvc;
         }
 
         [HttpGet]
@@ -40,7 +40,6 @@ namespace Asp.Net.TDD.Api.Controllers
         public HttpResponseMessage Post([FromBody]Product product)
         {
             var productModel = ProductMapper.MapToModel(product);
-            IProductService productSvc = new ProductService();
             productSvc.Save(productModel);
 
             return Request.CreateResponse(HttpStatusCode.Created);

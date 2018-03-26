@@ -12,9 +12,9 @@ namespace Asp.Net.TDD.Api.Controllers
     {
         private IOrderService _orderService;
 
-        public OrderController()
+        public OrderController(IOrderService orderService)
         {
-            _orderService = new OrderService();
+            _orderService = orderService;
         }
         [Route("api/orders")]
         [HttpGet]

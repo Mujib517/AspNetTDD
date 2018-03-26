@@ -14,9 +14,9 @@ namespace AspNetTDD.Services
         List<Product> products;
         IProductRepository _productRepository;
 
-        public ProductService()
+        public ProductService(IProductRepository productRepository)
         {
-            _productRepository = new ProductRepository();
+            _productRepository = productRepository;
 
             products = new List<Product>();
 
